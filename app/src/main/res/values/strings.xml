@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ActivityApp</string>
+    <string name="main_activity_1">MainActivity 1</string>
+    <string name="main_activity_2">MainActivity 2</string>
+    <string name="main_activity_3">MainActivity 3</string>
+    <string name="main_activity_4">MainActivity 4</string>
+    <string name="btn_go_to_first">go to first</string>
+    <string name="btn_go_to_fourth">go to fourth</string>
+    <string name="btn_go_to_third">go to third</string>
+    <string name="btn_go_to_second">go to second</string>
+    <string name="deep_link">deep link</string>
+</resources>
