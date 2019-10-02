@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity3 extends AppCompatActivity {
+public class AccountActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     public Button mButton;
@@ -17,56 +17,54 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_3);
-        mButton = findViewById(R.id.btn_2);
+        setContentView(R.layout.activity_account);
+        mButton = findViewById(R.id.btn_4);
 
         mButton.setOnClickListener(this::onClick);
-        Log.d(TAG, "onCreate: MainActivity3");
+        Log.d(TAG, "onCreate: AccountActivity");
 
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
-
     }
 
     private void onClick(View view) {
-        Intent intent = new Intent(this, MainActivity4.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(this, CatalogActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: MainActivity3");
+        Log.d(TAG, "onStart: AccountActivity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: MainActivity3");
+        Log.d(TAG, "onResume: AccountActivity");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: MainActivity3");
+        Log.d(TAG, "onRestart: AccountActivity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: MainActivity3");
+        Log.d(TAG, "onPause: AccountActivity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: MainActivity3");
+        Log.d(TAG, "onStop: AccountActivity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy: MainActivity3");
+        Log.d(TAG, "onDestroy: AccountActivity");
     }
 }

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     public Button mButton;
@@ -17,60 +17,55 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_2);
-        mButton = findViewById(R.id.btn_1);
+        setContentView(R.layout.activity_search);
+        mButton = findViewById(R.id.btn_2);
 
         mButton.setOnClickListener(this::onClick);
-        Log.d(TAG, "onCreate: MainActivity2");
+        Log.d(TAG, "onCreate: SearchActivity");
 
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
     }
 
     private void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_1:
-                Intent intent = new Intent(this, MainActivity3.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
+        Intent intent = new Intent(this, AccountActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: MainActivity2");
+        Log.d(TAG, "onStart: SearchActivity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: MainActivity2");
+        Log.d(TAG, "onResume: SearchActivity");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: MainActivity2");
+        Log.d(TAG, "onRestart: SearchActivity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: MainActivity2");
+        Log.d(TAG, "onPause: SearchActivity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: MainActivity2");
+        Log.d(TAG, "onStop: SearchActivity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy: MainActivity2");
+        Log.d(TAG, "onDestroy: SearchActivity");
     }
 }

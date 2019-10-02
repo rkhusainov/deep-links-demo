@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity4 extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     public Button mButton;
@@ -17,54 +17,60 @@ public class MainActivity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_4);
-        mButton = findViewById(R.id.btn_4);
+        setContentView(R.layout.activity_map);
+        mButton = findViewById(R.id.btn_1);
 
         mButton.setOnClickListener(this::onClick);
-        Log.d(TAG, "onCreate: MainActivity4");
+        Log.d(TAG, "onCreate: MapActivity");
 
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
     }
 
     private void onClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        switch (view.getId()) {
+            case R.id.btn_1:
+                Intent intent = new Intent(this, SearchActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: MainActivity4");
+        Log.d(TAG, "onStart: MapActivity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: MainActivity4");
+        Log.d(TAG, "onResume: MapActivity");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: MainActivity4");
+        Log.d(TAG, "onRestart: MapActivity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: MainActivity4");
+        Log.d(TAG, "onPause: MapActivity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: MainActivity4");
+        Log.d(TAG, "onStop: MapActivity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy: MainActivity4");
+        Log.d(TAG, "onDestroy: MapActivity");
     }
 }

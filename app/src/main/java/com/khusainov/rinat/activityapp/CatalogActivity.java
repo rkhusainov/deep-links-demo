@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class CatalogActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
     public static final String SAVED_STRING = "SAVED_STRING";
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_catalog);
 
         mButton = findViewById(R.id.btn_1);
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mButton.setText(mButtonText);
         mButton.setOnClickListener(this::onClick);
 
-        Log.d(TAG, "onCreate: MainActivity");
+        Log.d(TAG, "onCreate: CatalogActivity");
 
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_1:
-                Intent intent = new Intent(this, MainActivity2.class);
+                Intent intent = new Intent(this, MapActivity.class);
                 startActivity(intent);
                 break;
             default:
@@ -70,36 +70,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: MainActivity");
+        Log.d(TAG, "onStart: CatalogActivity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: MainActivity");
+        Log.d(TAG, "onResume: CatalogActivity");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: MainActivity");
+        Log.d(TAG, "onRestart: CatalogActivity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: MainActivity");
+        Log.d(TAG, "onPause: CatalogActivity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: MainActivity");
+        Log.d(TAG, "onStop: CatalogActivity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy: MainActivity");
+        Log.d(TAG, "onDestroy: CatalogActivity");
     }
 }
