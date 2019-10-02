@@ -15,15 +15,12 @@
 
     <string-array name="names">
         <item>Артур</item>
-        <item>Александр</item>
         <item>Марат</item>
         <item>Алексей</item>
-        <item>Ринат</item>
         <item>Сергей</item>
         <item>Анна</item>
         <item>Елена</item>
         <item>Галина</item>
-        <item>Денис</item>
         <item>Михаил</item>
         <item>Андрей</item>
         <item>Екатерина</item>
@@ -40,6 +37,5 @@
         <item>Honda</item>
         <item>Hyundai</item>
         <item>Lada</item>
-        <item>Nexia</item>
     </string-array>
 </resources>

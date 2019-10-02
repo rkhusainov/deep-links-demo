@@ -3,7 +3,6 @@ package com.khusainov.rinat.activityapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestModel implements Parcelable {
@@ -11,15 +10,15 @@ public class TestModel implements Parcelable {
     private String name;
     private String car;
 
-    private List<String> cities;
-    private List<String> countries;
+    private List<String> names;
+    private List<String> cars;
 
 
     public TestModel(String name, String car, List<String> cities, List<String> countries) {
         this.name = name;
         this.car = car;
-        this.cities = cities;
-        this.countries = countries;
+        this.names = cities;
+        this.cars = countries;
     }
 
     protected TestModel() {
@@ -28,8 +27,8 @@ public class TestModel implements Parcelable {
     protected TestModel(Parcel in) {
         name = in.readString();
         car = in.readString();
-        cities = in.createStringArrayList();
-        countries = in.createStringArrayList();
+        names = in.createStringArrayList();
+        cars = in.createStringArrayList();
     }
 
     public static final Creator<TestModel> CREATOR = new Creator<TestModel>() {
@@ -53,7 +52,7 @@ public class TestModel implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(car);
-        dest.writeList(cities);
-        dest.writeList(countries);
+        dest.writeList(names);
+        dest.writeList(cars);
     }
 }
