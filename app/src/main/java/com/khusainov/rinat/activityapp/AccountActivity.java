@@ -18,7 +18,7 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        mButton = findViewById(R.id.btn_4);
+        mButton = findViewById(R.id.btn_1);
 
         mButton.setOnClickListener(this::onClick);
         Log.d(TAG, "onCreate: AccountActivity");

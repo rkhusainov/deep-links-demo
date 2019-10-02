@@ -18,7 +18,7 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        mButton = findViewById(R.id.btn_2);
+        mButton = findViewById(R.id.btn_1);
 
         mButton.setOnClickListener(this::onClick);
         Log.d(TAG, "onCreate: SearchActivity");

@@ -9,4 +9,37 @@
     <string name="map">Map</string>
     <string name="search">search</string>
     <string name="account">Account</string>
+    <string name="first_name">first_name</string>
+    <string name="car_model">car model</string>
+
+
+    <string-array name="names">
+        <item>Артур</item>
+        <item>Александр</item>
+        <item>Марат</item>
+        <item>Алексей</item>
+        <item>Ринат</item>
+        <item>Сергей</item>
+        <item>Анна</item>
+        <item>Елена</item>
+        <item>Галина</item>
+        <item>Денис</item>
+        <item>Михаил</item>
+        <item>Андрей</item>
+        <item>Екатерина</item>
+    </string-array>
+
+    <string-array name="cars">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Audi</item>
+        <item>Nissan</item>
+        <item>Toyota</item>
+        <item>Chevrolet</item>
+        <item>Mazda</item>
+        <item>Honda</item>
+        <item>Hyundai</item>
+        <item>Lada</item>
+        <item>Nexia</item>
+    </string-array>
 </resources>

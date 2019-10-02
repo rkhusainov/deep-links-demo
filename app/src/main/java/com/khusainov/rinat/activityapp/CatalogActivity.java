@@ -9,6 +9,7 @@ import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -18,13 +19,19 @@ public class CatalogActivity extends AppCompatActivity {
     public static final String SAVED_STRING = "SAVED_STRING";
     public static final String SAVED_PARCEL = "SAVED_PARCEL";
 
-    public Button mButton;
-    public String mButtonText;
+    private Button mButton;
+    private String mButtonText;
+
+    private TextView mFirstName;
+    private TextView mCarModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
+
+        mFirstName = findViewById(R.id.tv_name);
+        mCarModel = findViewById(R.id.tv_car);
 
         mButton = findViewById(R.id.btn_1);
 
@@ -40,6 +47,8 @@ public class CatalogActivity extends AppCompatActivity {
 
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
+
+
     }
 
     private void onClick(View view) {
@@ -57,7 +66,7 @@ public class CatalogActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
         outState.putString(SAVED_STRING, mButtonText);
-        outState.putParcelable(SAVED_PARCEL, new MainParcel());
+        outState.putParcelable(SAVED_PARCEL, new TestModel());
     }
 
     @Override
