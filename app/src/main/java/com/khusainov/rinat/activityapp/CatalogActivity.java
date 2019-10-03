@@ -26,6 +26,7 @@ public class CatalogActivity extends AppCompatActivity {
     private Button mButton;
     private TextView mFirstName;
     private TextView mCarModel;
+    private TextView mAccount;
 
     private TestModel mTestModel;
     private String first_name;
@@ -42,6 +43,11 @@ public class CatalogActivity extends AppCompatActivity {
         mCarModel = findViewById(R.id.tv_car);
         mButton = findViewById(R.id.btn_1);
         mButton.setOnClickListener(this::onClick);
+
+        mAccount = findViewById(R.id.tv_link_account);
+        mAccount.setText(Html.fromHtml("<a href='market://account'>Account</a>"));
+        mAccount.setMovementMethod(LinkMovementMethod.getInstance());
+        mAccount.setLinksClickable(true);
 
         generateModel();
 

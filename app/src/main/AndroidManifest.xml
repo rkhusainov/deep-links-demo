@@ -12,17 +12,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity"
-            android:label="Market">
+        <activity android:name=".CatalogActivity">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
-        </activity>
-
-        <activity android:name=".CatalogActivity">
 
             <intent-filter android:label="Catalog">
                    <action android:name="android.intent.action.VIEW" />
