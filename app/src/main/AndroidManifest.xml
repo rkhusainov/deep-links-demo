@@ -11,42 +11,49 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CatalogActivity">
+
+        <activity android:name=".MainActivity"
+            android:label="Market">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-               <intent-filter android:label="Catalog">
-                <action android:name="android.intent.action.VIEW" />
+        </activity>
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+        <activity android:name=".CatalogActivity">
 
-                   <data
-                       android:scheme="http"
-                       android:host="my.market.com"
-                       android:pathPrefix="/"
-                        />
+            <intent-filter android:label="Catalog">
+                   <action android:name="android.intent.action.VIEW" />
+
+                   <category android:name="android.intent.category.DEFAULT" />
+                   <category android:name="android.intent.category.BROWSABLE" />
 
                    <data
                         android:scheme="http"
                         android:host="my.market.com"
                         android:pathPrefix="/catalog"
                      />
+               </intent-filter>
 
+            <intent-filter android:label="Catalog default">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="my.market.com"
+                    />
             </intent-filter>
 
         </activity>
 
         <activity
             android:name=".MapActivity"
-            android:launchMode="singleInstance">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:launchMode="singleInstance" >
 
             <intent-filter android:label="Map">
                 <action android:name="android.intent.action.VIEW" />
@@ -65,10 +72,6 @@
         <activity
             android:name=".SearchActivity"
             android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <intent-filter android:label="Search">
                 <action android:name="android.intent.action.VIEW" />
@@ -87,10 +90,6 @@
         <activity
             android:name=".AccountActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <intent-filter android:label="Account">
                 <action android:name="android.intent.action.VIEW" />
@@ -105,7 +104,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

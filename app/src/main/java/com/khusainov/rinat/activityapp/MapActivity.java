@@ -6,25 +6,59 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
+    public static final String SAVED_PARCEL = "SAVED_PARCEL";
+
     public Button mButton;
+    private TextView mFirstName;
+    private TextView mCarModel;
+
+    private TestModel mTestModel;
+    private String first_name;
+    private String car_model;
+    private List<String> names;
+    private List<String> cars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        mFirstName = findViewById(R.id.tv_name);
+        mCarModel = findViewById(R.id.tv_car);
         mButton = findViewById(R.id.btn_1);
-
         mButton.setOnClickListener(this::onClick);
-        Log.d(TAG, "onCreate: MapActivity");
 
+        generateModel();
+
+        mFirstName.setText(mTestModel.getName());
+        mCarModel.setText(mTestModel.getCar());
+
+        Log.d(TAG, "onCreate: MapActivity");
         Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: "+ data);
+    }
+
+    private void generateModel() {
+        names = Arrays.asList(getResources().getStringArray(R.array.names));
+        Collections.shuffle(names);
+        cars = Arrays.asList(getResources().getStringArray(R.array.cars));
+        Collections.shuffle(cars);
+
+        first_name = names.get(0);
+        car_model = cars.get(0);
+
+        mTestModel = new TestModel(first_name, car_model, names, cars);
     }
 
     private void onClick(View view) {
@@ -36,6 +70,22 @@ public class MapActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(SAVED_PARCEL, mTestModel);
+        Log.d(TAG, "onSaveInstanceState: SAVE");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mTestModel = savedInstanceState.getParcelable(SAVED_PARCEL);
+        mFirstName.setText(mTestModel.getName());
+        mCarModel.setText(mTestModel.getCar());
+        Log.d(TAG, "onRestoreInstanceState: RESTORE");
     }
 
     @Override

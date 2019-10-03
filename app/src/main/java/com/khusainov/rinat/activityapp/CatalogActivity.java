@@ -21,23 +21,17 @@ import java.util.Random;
 public class CatalogActivity extends AppCompatActivity {
 
     private static final String TAG = "TAG";
-    public static final String SAVED_STRING = "SAVED_STRING";
     public static final String SAVED_PARCEL = "SAVED_PARCEL";
 
     private Button mButton;
-
     private TextView mFirstName;
     private TextView mCarModel;
-    private TextView mLink;
 
     private TestModel mTestModel;
     private String first_name;
     private String car_model;
     private List<String> names;
     private List<String> cars;
-
-    private List<String> namesFromParcel;
-    private List<String> carsFromParcel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,18 +43,13 @@ public class CatalogActivity extends AppCompatActivity {
         mButton = findViewById(R.id.btn_1);
         mButton.setOnClickListener(this::onClick);
 
-        mLink = findViewById(R.id.tv_link);
-        mLink.setText(Html.fromHtml("<a href='market://account'>Market Account</a>"));
-        mLink.setMovementMethod(LinkMovementMethod.getInstance());
-        mLink.setLinksClickable(true);
-
         generateModel();
 
-        mFirstName.setText(first_name);
-        mCarModel.setText(car_model);
+        mFirstName.setText(mTestModel.getName());
+        mCarModel.setText(mTestModel.getCar());
 
-        Uri data = getIntent().getData();
         Log.d(TAG, "onCreate: CatalogActivity");
+        Uri data = getIntent().getData();
         Log.d(TAG, "Deep link clicked: " + data);
     }
 
@@ -88,19 +77,18 @@ public class CatalogActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putParcelable(SAVED_PARCEL, mTestModel);
-        outState.putString(SAVED_STRING, first_name);
         Log.d(TAG, "onSaveInstanceState: SAVE");
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onRestoreInstanceState(savedInstanceState, persistentState);
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
         mTestModel = savedInstanceState.getParcelable(SAVED_PARCEL);
-        first_name = savedInstanceState.getString(SAVED_STRING);
-        mFirstName.setText(first_name);
+        mFirstName.setText(mTestModel.getName());
+        mCarModel.setText(mTestModel.getCar());
         Log.d(TAG, "onRestoreInstanceState: RESTORE");
     }
 

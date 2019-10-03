@@ -1,16 +1,22 @@
 <resources>
     <string name="app_name">ActivityApp</string>
-    <string name="btn_go_to_first">go to first</string>
-    <string name="btn_go_to_fourth">go to fourth</string>
-    <string name="btn_go_to_third">go to third</string>
-    <string name="btn_go_to_second">go to second</string>
+    <string name="btn_go_to_catalog">go to catalog</string>
+    <string name="btn_go_to_account">go to account</string>
+    <string name="btn_go_to_search">go to search</string>
+    <string name="btn_go_to_map">go to map</string>
     <string name="deep_link">deep link</string>
     <string name="catalog">Catalog</string>
     <string name="map">Map</string>
-    <string name="search">search</string>
+    <string name="search">Search</string>
     <string name="account">Account</string>
     <string name="first_name">first_name</string>
     <string name="car_model">car model</string>
+    <string name="my_market">My market</string>
+    <string name="tools_text_home">home link</string>
+    <string name="tools_text_catalog">catalog link</string>
+    <string name="tools_text_map">map link</string>
+    <string name="tools_text_search">search link</string>
+    <string name="tools_text_account">account link</string>
 
 
     <string-array name="names">

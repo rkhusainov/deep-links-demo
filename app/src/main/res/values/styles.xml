@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="main_title">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="page_title">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+    </style>
+
 </resources>

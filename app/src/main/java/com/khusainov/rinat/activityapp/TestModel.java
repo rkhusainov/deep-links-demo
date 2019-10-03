@@ -55,4 +55,36 @@ public class TestModel implements Parcelable {
         dest.writeList(names);
         dest.writeList(cars);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
+    public List<String> getNames() {
+        return names;
+    }
+
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public List<String> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<String> cars) {
+        this.cars = cars;
+    }
 }
